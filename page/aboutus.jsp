@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<%@page contentType="text/html;charset=utf-8" language="java" import="java.sql.*, java.util.*"%>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="../image/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <style>@import url("../css/home.css");</style>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/card.css">
+    <link rel="stylesheet" href="../css/about.css">
+    <link rel="stylesheet" href="../css/contact.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link rel="icon" href="../img/logo.png" type="image/x-icon" />
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <title>關於我們</title>
+</head>
+<style>
+    a{
+text-decoration: none;
+}
+  a:hover{
+text-decoration: underline;
+color: black;
+}
+  </style>
+      <script>
+        function myalert() { 
+            alert("您的信件已送出，我們將盡快與您聯絡！");
+            }
+    </script>
+<!--功能列-->
+<header style="background-color: white; width: 100%; height: 70px; position: fixed; top: 0px; z-index: 600;">
+    <div class="container">
+        <div class="row"> 
+          <div class="col">    
+            <a href="../html/index.jsp"><img style="width:auto;height: 70px ;" src="../image/logo.png" ></a>
+          </div>
+          <div class="col">    
+           
+            </div>
+            <div class="col-md-auto">
+              <a href="../page/guide.jsp"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">新手指南</b></a>  
+            </div>
+            <div class="col-md-auto">
+              <a href="../page/search.jsp"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">服務查詢</b></a> 
+            </div>
+            <div class="col-md-auto">
+              <a href="../page/hoursignin.jsp"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">時數認證者</b></a>
+            </div>
+            <div class="col-md-auto">
+              <a href="../page/serversupplysignin.jsp"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">服務提供者</b></a>
+            </div>
+            <div class="col-md-auto">
+              <a href="../page/volunteerserversignin.jsp"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">志工服務者</b></a>
+            </div>
+            <div class="col-md-auto">
+              <a href="../page/aboutus.jsp"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">關於我們</b></a>
+            </div>
+          </div>
+      </div>
+  </header>
+  <div style="margin-top: 70px;"><br></div>
+
+
+
+
+
+    <section>
+        <div class="image">
+        </div>
+
+        <div class="content">
+            <h2>關於我們</h2>
+            <span>
+                <!-- line here -->
+            </span>
+            <p>想加入<b>志工服務</b>的行列嗎?<br>
+                想知道<b>區塊鏈</b>的運作嗎？<br>
+                想跟上科技的新趨勢嗎？<br>
+                在這裡您的想法將被付諸實行，
+                並有機會與外面的單位合作，
+                甚至創造一種<b>時間幣值</b>！
+                跟著我們一起用實作的方式一同進入熱血的區塊鏈世界吧！<br>
+               在這裡，您就是<b>時間的主人！</b>
+            </p>
+            <ul class="links">
+
+                <li><a href="#Frontend">我們的特色</a></li>
+                
+                <div class="vertical-line"></div>
+
+                <li><a href="#Contact">聯絡我們</a></li>
+
+            </ul>
+        </div>
+    </section>
+    <section class="hero-section">
+        <div class="card-grid">
+            <a class="card" href="#Frontend">
+                <div class="card__background" style="background-image: url(../image/About/1.png)">
+                </div>
+                <div class="card__content">
+                    <p class="card__category">unity</p>
+                    <h3 class="card__heading">團結</h3>
+                </div>
+            </a>
+            <a class="card" href="#Frontend">
+                <div class="card__background" style="background-image: url(../image/About/2.png)">
+                </div>
+                <div class="card__content">
+                    <p class="card__category">trust</p>
+                    <h3 class="card__heading">信任</h3>
+                </div>
+            </a>
+            <a class="card" href="#Frontend">
+                <div class="card__background" style="background-image: url(../image/About/3.png)">
+                </div>
+                <div class="card__content">
+                    <p class="card__category">Sustainable</p>
+                    <h3 class="card__heading">永續</h3>
+                </div>
+                </li>
+                <a class="card" href="#Frontend">
+                    <div class="card__background" style="background-image: url(../image/About/4.png)">
+                    </div>
+                    <div class="card__content">
+                        <p class="card__category">love</p>
+                        <h3 class="card__heading">愛心</h3>
+                    </div>
+                </a>
+                <div>
+    </section>
+
+
+    
+
+    </section>
+    <div class="frame" id="Contact">
+        <div id="button_open_envelope">
+            Contact us
+        </div>
+        <div class="message">
+            <form method="post" action="admin/function/board_insert.html">
+                <input type="text" name="name" id="name" placeholder=" Name* " required>
+
+                <input type="email" name="email" id="email" placeholder=" Email* " required
+                    pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$">
+
+                <input type="text" name="phone" id="phone" placeholder=" Phone" required>
+
+                <textarea name="message" id="messarea" placeholder=" Message* " required></textarea>
+
+                <input type="text" name="address" id="address" style="display: none;">
+                <!--這邊的input type=bttton到時候要改成submit-->
+               <a href="../page/aboutus.jsp"> <input type="button" value="Send" id="send" onclick="myalert()"></a>
+            </form>
+        </div>
+        <div class="bottom"></div>
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="top"></div>
+    </div>
+
+
+</body>
+
+
+<script>
+    $(document).ready(function () {
+        $('.frame').click(function () {
+            $('.top').addClass('open');
+            $('.message').addClass('pull');
+        })
+    });
+</script>
+
+
+<img style="width: 100%;height: auto;" src="../image/newfooter.png" class="img-fluid">
+<footer style="background-color: #b6c3a7;">
+    <div class="container">
+      <div class="row">
+        <div class="col-8">
+          <b style="font-size: 3ch;">聯絡資訊</b>
+          <br>
+          E-mail : VTimezone@gmail.com<br>
+          Tel : 0800-000-888<br>
+          Copyright © 2022 CYIM. All Rights Reserved<br>
+          歡迎您來到-志工時區X時間銀行
+        </div>
+		<div class="col-4">
+		 <%
+try {
+//Step 1: 載入資料庫驅動程式 
+  Class.forName("com.mysql.jdbc.Driver");
+  try {
+//Step 2: 建立連線 
+        String url="jdbc:mysql://localhost/?serverTimezone=UTC";
+        Connection con=DriverManager.getConnection(url,"root","1234");
+		String countString;
+		int Count;
+        if(con.isClosed())
+           out.println("連線建立失敗");
+        else
+        {
+//Step 3: 選擇資料庫	        
+           String sql="USE `Project`";
+           con.createStatement().execute(sql);
+		   
+//Step 4: 執行 SQL 指令
+		    String countp="select * from `counter`"; 
+		    ResultSet r=con.createStatement().executeQuery(countp);    
+			
+//Step 5: 顯示結果     
+				while(r.next()) 
+            {
+				String c_S= r.getString(1); 
+				int c=Integer.parseInt(c_S); 
+
+				if (session.isNew()) { 
+					c++; 
+				countp="update `counter` set `count`=" + c; 
+				%>
+				
+				<b style="font-size: 3ch;">
+				<%
+				out.print("瀏覽人次："+c+"人"+"<br/>");
+				%>
+				</b>
+	
+				<%
+			}
+			else  
+			{
+				%>
+				
+				<b style="font-size: 3ch;">
+				<%
+				out.print("瀏覽人次："+c+"人"+"<br/>");
+			} 
+
+			}
+			con.createStatement().execute(countp); 
+			%> 				
+
+        </div>      
+      </div>               
+    </div>  
+<%
+//Step 6: 關閉連線
+        con.close();
+        }
+    }	
+    catch (SQLException sExec) {
+        out.println("SQL錯誤"+sExec.toString());
+    }
+}
+catch (ClassNotFoundException err) {
+   out.println("class錯誤"+err.toString());
+}
+
+
+
+%>	 	
+    <!--回到頂端-->
+    <button type="button" class="btn  btn-floating btn-lg" id="btn-back-to-top"><img style="width: 5ch;" src="../image/up-arrow.png"></button>                               
+  <script src="../js/home.js"></script>                     
+  </footer>
+
+<script src="../js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
