@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../image/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://static.pureexample.com/js/flot/excanvas.min.js"></script>
+    <script src="http://static.pureexample.com/js/flot/jquery.flot.min.js"></script>
+    <script src="http://static.pureexample.com/js/flot/jquery.flot.pie.min.js"></script>
+    <!--頁碼-->
+    <script src="../js/timebank.js"></script>
+    <script src="../js/timebanktable2.js"></script>
+    <style>
+      @import url("../css/home.css");
+      /*@import url("../css/pagenumber.css");*/
+      /*@import url("../css/timebank.css");*/
+    </style>
+    <title>時間銀行</title>
+    <style>
+      a:hover {
+        text-decoration:underline;
+        color:black;
+      }
+      a:link, a:visited{
+        color:black;
+      }
+      .item{
+        background-color: #fff;
+        border-radius: 5px;
+        margin-top: 20px;
+        margin-left: -10px;
+        padding-bottom: 20px;
+        padding-top: 20px;
+      }
+      .item2{
+        background-color: #fff;
+        border-radius: 5px;
+        margin-top: 20px;
+        margin-left: 10px;
+      }
+    #flotcontainer {
+        /*width: 600px;*/
+        height: 400px;
+        text-align: left;
+    }
+    .trianglel{
+        width: 0;
+        height: 0;
+        border: 15px solid transparent;
+        border-right: 25px solid #28bccf;
+    }
+    .triangler{
+        width: 0;
+        height: 0;
+        border: 15px solid transparent;
+        border-left: 25px solid #28bccf;
+    }
+    </style>
+</head>
+<body style="background-color: #f4f8f9">
+  <header style="background-color: white; width: 100%; height: 70px; position: fixed; top: 0px; z-index: 2;">
+      <div class="container">
+          <div class="row"> 
+            <div class="col">    
+              <a href="../html/index.html"><img style="width:150%;height: auto;" src="../image/logo.png" ></a>
+            </div>
+            <div class="col">    
+             
+              </div>
+              <div class="col-md-auto">
+                <a href="../page/guide.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">新手指南</b></a>  
+              </div>
+              <div class="col-md-auto">
+                <a href="../page/search.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">服務查詢</b></a> 
+              </div>
+              <div class="col-md-auto">
+                <a href="../page/hoursignin.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">時數認證者</b></a>
+              </div>
+              <div class="col-md-auto">
+                <a href="../page/serversupplysignin.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">服務提供者</b></a>
+              </div>
+              <div class="col-md-auto">
+                <a href="../page/volunteerserversignin.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">志工服務者</b></a>
+              </div>
+              <div class="col-md-auto">
+                <a href="../page/aboutus.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">關於我們</b></a>
+              </div>
+            </div>
+        </div>
+    </header>
+    <div class="container-fluid">
+        <!--固定側邊清單-->
+            <div class="row flex-nowrap" style="background-color: #f4f8f9;">
+                <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0" style="background-color: #f4f8f9;padding-top: 4%;border-right:5px white solid;">
+                    <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2  min-vh-100" id="sidebar" >
+                        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu" style="position: fixed;">
+                            <li class="nav-item">
+                                <a href="../page/V_Demand.html" class="nav-link align-middle px-0" style="color: black;">
+                                    <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">✍🏻 填寫服務需求表單 </span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../page/Ser_Reg_Checklist.html" class="nav-link align-middle px-0" style="color: black;"> 
+                                    <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">📝 審核志工報名 </span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../page/S_time-apply.html" class="nav-link align-middle px-0" style="color: black;"> 
+                                    <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">⏰ 審核時數受理 </span>
+                                </a>
+                            </li>
+                            <hr>
+                            <li class="nav-item">
+                                <a href="../page/volunteerself.html" class="nav-link align-middle px-0" style="color: black;">
+                                    <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">↩️ 個人資料頁面</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="container" style="padding-top: 6%;" id="content">  
+                    <div class="row">
+        <!--即將到來的服務&個人資料文&個人相片-->
+                        <div class="col" style="font-size: 3ch;padding-bottom: 1%;">
+                            <b>💎時間銀行</b>
+                        </div> 
+                    </div>
+                    <div class="row">
+                            <div class="col-sm-4" style="background-color: white;border-top-left-radius: 3ch;border-bottom-left-radius: 3ch;">
+                                <div id="legendPlaceholder"></div>
+                                <div id="flotcontainer"></div>
+                                <div class="trianglel" style="position: relative; float: left;margin-bottom: 5ch;margin-left: 1ch; "></div>
+                                <div class="triangler" style="position: relative; float: right;margin-bottom: 5ch; "></div>
+                                <center><font style="font-family: cursive; font-size: 25px;margin-bottom: 5ch;">六月</font></center>
+                                <script>
+                                    $(function () { 
+                                        var data = [
+                                            {label: "收入", data: 5},
+                                            {label: "支出", data: 2}
+                                        ];
+                                     
+                                        var options = {
+                                                series: {
+                                                    pie: {
+                                                        show: true,
+                                                        innerRadius: 0.5,
+                                                        label: {
+                                                            show: true
+                                                        }
+                                                    }
+                                                }
+                                            };
+                                        $.plot($("#flotcontainer"), data, options);  
+                                    });
+                                    
+                                </script>
+                            </div>
+                            <div class="col" style="background-color: white;padding-left: 5ch;border-top-right-radius: 3ch;border-bottom-right-radius: 3ch;">
+                                <p style="margin-top: 2ch;font-size: 20px;"><b>💰️時間存摺</b></p>
+                                <table class="table" id="myTable" style="text-align: center;">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>日期</th>
+                                            <th>服務名稱</th>
+                                            <th>支出</th>
+                                            <th>收入</th>
+                                            <th>結餘</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>2022-06-01</td>
+                                            <td>用愛讓教育無所不在</td>
+                                            <td>2</td>
+                                            <td></td>
+                                            <td>95</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2022-05-30</td>
+                                            <td>協助照顧老人</td>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>97</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2022-05-21</td>
+                                            <td>溪湖糖廠旅遊趣</td>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>92</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2022-05-20</td>
+                                            <td>黑潮基金淨灘活動</td>
+                                            <td></td>
+                                            <td>3</td>
+                                            <td>87</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2022-05-16</td>
+                                            <td>協助指揮交通</td>
+                                            <td></td>
+                                            <td>4</td>
+                                            <td>84</td>
+                                        </tr>  
+                                    </tbody>
+                                  </table>
+                                    <div class="row">
+                                        <div class="col" style="padding-top: 10px;">
+                                            <ul class="pagination" style="margin-left: 33%;align-items: center;" id="pageModule" style="display: flex;align-items: center;justify-content: center;"></ul>
+                                        </div>
+                                    </div>                    
+                            </div>
+                    </div> 
+                    <div class="row" style="margin-top: 3ch;">
+                        <div class="col" style="font-size: 3ch;padding-bottom: 1%;">
+                            <b>🏵各類別收入比一比</b>
+                        </div> 
+                        <div class="col-8" style="font-size: 3ch;padding-bottom: 1%;">
+                            <b>💞目前提供的服務</b>
+                        </div>
+                    </div> 
+<script>
+      function listBtn(n) {
+        var listBtn = document.getElementById(n).value;
+        var textlistn1 = document.getElementById('show-goverment');
+        var textlistn2 = document.getElementById('show-sdgs');
+        var month = document.getElementById("start");
+        if(listBtn==1 && textlistn1.style.display === 'none' && month.event==onclick){
+          textlistn1.style.display = 'block';
+        }
+        else{
+            textlistn1.style.display = 'none';
+        }
+        if(listBtn==2 && textlistn2.style.display === 'none' &&  month.event==onclick){
+            textlistn2.style.display = 'block';
+        }
+        else  {
+          
+          textlistn2.style.display= 'none';
+        } 
+      }
+   </script>
+             
+                    <div class="row">
+                        <div class="col" style="background-color: white;border-radius: 3ch;margin-right: 3ch;" >
+                          <div class="row">
+                            <div class="col-md-auto" style="width: max-content;margin-left: 3ch;margin-top: 2ch;" >
+                                <label>請選擇分類</label>
+                                <select class="form-select" size="3" aria-label="size 3 select example">
+                                    <option value="1" id="1" onclick="listBtn(1)">政府單位</option>
+                                    <option value="2" id="2" onclick="listBtn(2)">SDGS</option>
+                                </select>
+                            </div>
+                            <div class="col" style="width: max-content;margin-top: 2ch;" >
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="start">請選擇月份</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <input type="month" id="start" name="start"
+                                            min="2021-03" value="2022-06">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+<!--goverment-->
+                        <div class="row"  id="show-goverment" style="margin-top: 3ch;display: none;">
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col-md-auto">
+                                        <label>社會類</label>
+                                    </div>
+                                    <div class="col">
+                                        <div class="progress" style="margin-top: 1%;">
+                                            <div id="progress1" class="progress-bar bg-success" role="progressbar" style="width: 89%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"title="44.5小時">44.5小時</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-auto">
+                                        <label>環境類</label>
+                                    </div>
+                                    <div class="col">
+                                        <div class="progress" style="margin-top: 1%;">
+                                            <div id="progress1" class="progress-bar bg-info" role="progressbar" style="width: 23%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"title="11.5小時">11.5小時</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-auto">
+                                        <label>教育類</label>
+                                    </div>
+                                    <div class="col">
+                                        <div class="progress" style="margin-top: 1%;">
+                                            <div id="progress1" class="progress-bar bg-warning" role="progressbar" style="width: 67%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"title="33.5小時">33.5小時</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-auto">
+                                        <label>文化類</label>
+                                    </div>
+                                    <div class="col">
+                                        <div class="progress" style="margin-top: 1%;">
+                                            <div id="progress1" class="progress-bar bg-danger" role="progressbar" style="width: 3%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"title="1.5小時">1.5小時</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-auto">
+                                        <label>行政類</label>
+                                    </div>
+                                    <div class="col">
+                                        <div class="progress" style="margin-top: 1%;">
+                                            <div id="progress1" class="progress-bar bg-success" role="progressbar" style="width: 20%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"title="10小時">10小時</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-auto">
+                                        <label>交通類</label>
+                                    </div>
+                                    <div class="col">
+                                        <div class="progress" style="margin-top: 1%;">
+                                            <div id="progress1" class="progress-bar bg-info" role="progressbar" style="width: 14%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"title="7小時">7小時</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-auto">
+                                        <label>救護類</label>
+                                    </div>
+                                    <div class="col">
+                                        <div class="progress" style="margin-top: 1%;">
+                                            <div id="progress1" class="progress-bar bg-warning" role="progressbar" style="width: 44%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"title="22小時">22小時</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-auto">
+                                        <label>資訊類</label>
+                                    </div>
+                                    <div class="col">
+                                        <div class="progress" style="margin-top: 1%;">
+                                            <div id="progress1" class="progress-bar bg-danger" role="progressbar" style="width: 0%;color:black;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"title="0小時">0小時</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-auto" style="margin-right: -3%;">
+                                        <label>時間銀行</label>
+                                    </div>
+                                    <div class="col">
+                                        <div class="progress" style="margin-top: 1%;">
+                                            <div id="progress1" class="progress-bar bg-success" role="progressbar" style="width: 1%;color:black;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" title="0.5小時">0.5小時</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row"  id="show-sdgs" style="margin-top: 3ch;display: none;">
+                            <div class="col">
+                                    <div class="col-md-auto">
+                                        <label>SDGS1 終結貧窮</label>
+                                    </div>
+                                    <div class="col">
+                                        <div class="progress" style="margin-top: 1%;">
+                                            <div id="progress1" class="progress-bar bg-success" role="progressbar" style="width: 8%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"title="4小時">4小時</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-auto" >
+                                        <label style="margin-top: 1%;">SDGS2 消除飢餓</label>
+                                    </div>
+                                    <div class="col">
+                                        <div class="progress" style="margin-top: 1%;">
+                                            <div id="progress1" class="progress-bar bg-info" role="progressbar" style="width: 61%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"title="35.5小時">35.5小時</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-auto" >
+                                        <label style="margin-top: 1%;">SDGS3 健康與福祉</label>
+                                    </div>
+                                    <div class="col">
+                                        <div class="progress" style="margin-top: 1%;">
+                                            <div id="progress1" class="progress-bar bg-warning" role="progressbar" style="width: 13%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"title="6.5小時">6.5小時</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-auto" >
+                                        <label style="margin-top: 1%;">SDGS4 優質教育</label>
+                                    </div>
+                                    <div class="col">
+                                        <div class="progress" style="margin-top: 1%;">
+                                            <div id="progress1" class="progress-bar bg-danger" role="progressbar" style="width: 20%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"title="20小時">10小時</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-auto" >
+                                        <label style="margin-top: 1%;">SDGS5 性別平權</label>
+                                    </div>
+                                    <div class="col">
+                                        <div class="progress" style="margin-top: 1%;">
+                                            <div id="progress1" class="progress-bar bg-success" role="progressbar" style="width: 35%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"title="17.5小時">17.5小時</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-auto" >
+                                        <label style="margin-top: 1%;">SDGS6 淨水及衛生</label>
+                                    </div>
+                                    <div class="col">
+                                        <div class="progress" style="margin-top: 1%;">
+                                            <div id="progress1" class="progress-bar bg-info" role="progressbar" style="width: 23%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"title="11.5小時">11.5小時</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-auto" >
+                                        <label style="margin-top: 1%;">SDGS7 可負擔的潔淨能源</label>
+                                    </div>
+                                    <div class="col">
+                                        <div class="progress" style="margin-top: 1%;">
+                                            <div id="progress1" class="progress-bar bg-warning" role="progressbar" style="width: 87%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"title="43.5小時">43.5小時</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-auto" >
+                                        <label style="margin-top: 1%;">SDGS8 合適的工作及經濟成長</label>
+                                    </div>
+                                    <div class="col">
+                                        <div class="progress" style="margin-top: 1%;">
+                                            <div id="progress1" class="progress-bar bg-danger" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"title="0小時">0小時</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-auto" >
+                                        <label style="margin-top: 1%;">SDGS9 工業化、創新及基礎建設</label>
+                                    </div>
+                                    <div class="col">
+                                        <div class="progress" style="margin-top: 1%;">
+                                            <div id="progress1" class="progress-bar bg-success" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"title="0小時">0小時</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-auto" >
+                                        <label style="margin-top: 1%;">SDGS10 減少不平等</label>
+                                    </div>
+                                    <div class="col">
+                                        <div class="progress" style="margin-top: 1%;">
+                                            <div id="progress1" class="progress-bar bg-info" role="progressbar" style="width: 2%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"title="1小時">1小時</div>
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="col-md-auto" >
+                                        <label style="margin-top: 1%;">SDGS11 永續城鄉</label>
+                                    </div>
+                                    <div class="col">
+                                        <div class="progress" style="margin-top: 1%;">
+                                            <div id="progress1" class="progress-bar bg-warning" role="progressbar" style="width: 6%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"title="3小時">3小時</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-auto" >
+                                        <label style="margin-top: 1%;">SDGS12 責任消費及生產</label>
+                                    </div>
+                                    <div class="col">
+                                        <div class="progress" style="margin-top: 1%;">
+                                            <div id="progress1" class="progress-bar bg-danger" role="progressbar" style="width: 78%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"title="39小時">39小時</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-auto" >
+                                        <label style="margin-top: 1%;">SDGS13 氣候行動</label>
+                                    </div>
+                                    <div class="col">
+                                        <div class="progress" style="margin-top: 1%;">
+                                            <div id="progress1" class="progress-bar bg-success" role="progressbar" style="width: 50%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"title="25小時">25小時</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-auto" >
+                                        <label style="margin-top: 1%;">SDGS14 保育海洋生態</label>
+                                    </div>
+                                    <div class="col">
+                                        <div class="progress" style="margin-top: 1%;">
+                                            <div id="progress1" class="progress-bar bg-info" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"title="0小時">0小時</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-auto" >
+                                        <label style="margin-top: 1%;">SDGS15 保育陸域生態</label>
+                                    </div>
+                                    <div class="col">
+                                        <div class="progress" style="margin-top: 1%;">
+                                            <div id="progress1" class="progress-bar bg-warning" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"title="0小時">0小時</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-auto" >
+                                        <label style="margin-top: 1%;">SDGS16 和平、正義及健全制度</label>
+                                    </div>
+                                    <div class="col">
+                                        <div class="progress" style="margin-top: 1%;">
+                                            <div id="progress1" class="progress-bar bg-danger" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"title="0小時">0小時</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-auto" >
+                                        <label style="margin-top: 1%;">SDGS17 多元夥伴關係</label>
+                                    </div>
+                                    <div class="col" style="margin-bottom: 3ch;">
+                                        <div class="progress" style="margin-top: 1%;">
+                                            <div id="progress1" class="progress-bar bg-success" role="progressbar" style="width: 5%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"title="2.5小時">2.5小時</div>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="col-8" style="background-color: white;border-radius: 3ch;" >
+                                <div class="table-responsive">
+                                       <table class="table table-hover" style="table-layout: fixed;text-align: center;" id="myTable2">
+                                            <thead>
+                                                <tr>
+                                                    <th style="width: 10ch;">服務單位</th>
+                                                    <th style="width: 20ch;">服務類別</th>
+                                                    <th style="width: 20ch;">服務名稱</th>
+                                                    <th style="width: 20ch;">服務內容</th>
+                                                    <th style="width: 13ch;">服務日期</th>
+                                                    <th style="width: 10ch;">服務時間<br>(開始)</th>
+                                                    <th style="width: 1ch;"></th>
+                                                    <th style="width: 20ch;">服務時間<br>(結束)</th>
+                                                    <th style="width: 30ch;">服務地點</th>
+                                                    <th style="width: 10ch;">人數需求</th>
+                                                    <th style="width: 30ch;">志工條件</th>
+                                                    <th style="width: 20ch;">連絡電話</th>
+                                                    <th style="width: 10ch;">刪除服務</th>
+                                                </tr>
+                                              </thead>
+                                              <tbody>
+                                                <tr>
+                                                    <td>時間銀行</td>
+                                                    <td>優質教育/教育服務</td>
+                                                    <td>用愛讓教育無所不在</td>
+                                                    <td>幫偏鄉孩子輔導國中二年級數學</td>
+                                                    <td>2022-06-18</td>
+                                                    <td>1500</td>
+                                                    <td>~</td>
+                                                    <td>1700</td>
+                                                    <td>台北市松山區民生東路五段234號</td>
+                                                    <td>1</td>
+                                                    <td>大學以上。需附數學成績證明。有耐心。</td>
+                                                    <td>0987-123-564</td>
+                                                    <td><input type="button" value="刪除" style="background-color: #454481; color: #ffffff; border:2px solid #454481; border-radius:10px;" onclick="showalert()"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>時間銀行</td>
+                                                    <td>優質教育/教育服務</td>
+                                                    <td>用愛讓教育無所不在</td>
+                                                    <td>幫偏鄉孩子輔導國中二年級英文</td>
+                                                    <td>2022-06-19</td>
+                                                    <td>1500</td>
+                                                    <td>~</td>
+                                                    <td>1700</td>
+                                                    <td>台北市松山區民生東路五段234號</td>
+                                                    <td>1</td>
+                                                    <td>大學以上。需附多益成績證明。有耐心。</td>
+                                                    <td>0987-123-564</td>
+                                                    <td><input type="button" value="刪除" style="background-color: #454481; color: #ffffff; border:2px solid #454481; border-radius:10px;" onclick="showalert()"></td>
+                                                </tr>
+                                              </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col" style="padding-top: 10px;">
+                                            <ul class="pagination" style="margin-left: 33%;align-items: center;" id="pageModule2" style="display: flex;align-items: center;justify-content: center;"></ul>
+                                        </div>
+                                    </div> 
+                                </div>  
+                            </div>
+                        </div>
+                    </div> 
+        </div>             
+   
+    <script>
+        function showalert(){
+            alert("已刪除！");
+        }
+      </script>
+ 
+    <img src="../image/newfooter.png" style="position: relative; margin-bottom: 0px; margin-top: 30px; width: 100%;">
+    <footer style="background-color: #b6c3a7; bottom: 0; width: 100%;">
+      <div class="container">
+        <div class="row">
+          <div class="col-8">
+            <b style="font-size: 3ch;">聯絡資訊</b>
+            <br>
+            E-mail : VTimezone@gmail.com<br>
+            Tel : 0800-000-888<br>
+            Copyright © 2022 CYIM. All Rights Reserved<br>
+            歡迎您來到-志工時區X時間銀行
+          </div>
+          <div class="col-4">
+            <b style="font-size: 3ch;">瀏覽人次:6666人</b>
+          </div>      
+        </div>               
+      </div>     
+      <button type="button" class="btn  btn-floating btn-lg" id="btn-back-to-top"><img style="width: 5ch;" src="../image/up-arrow.png"></button>                               
+    <script src="../js/home.js"></script>                     
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js" integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ" crossorigin="anonymous"></script>
+</body>
+</html>

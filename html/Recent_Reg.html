@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="shortcut icon" href="../image/favicon.png" type="image/x-icon" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>@import url("../css/home.css");</style>
+    <title>近期報名紀錄</title>
+    <style>
+        a:hover {
+          text-decoration:underline;
+          color:black;
+        }
+      </style>
+</head>
+<script>
+    function sortTable(n) {
+      var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+      table = document.getElementById("myTable");
+      switching = true;
+      // 设置升序排列
+      dir = "asc";
+      /* 设置一个循环语句 */
+      while (switching) {
+        // 设置循环结束标记
+        switching = false;
+        rows = table.rows;
+        /* 循环列表，从第二行开始 */
+        for (i = 1; i < (rows.length - 1); i++) {
+          // 设置元素是否调换位置
+          shouldSwitch = false;
+          /* 获取要比较的元素,
+          one from current row and one from the next: */
+          x = rows[i].getElementsByTagName("TD")[n];
+          y = rows[i + 1].getElementsByTagName("TD")[n];
+          /* 判断是否将下一个元素与当前元素进行切换 (asc 或 desc):  */
+          if (dir == "asc") {
+            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+              // 设置调换元素标记，并结束当前循环
+              shouldSwitch = true;
+              break;
+            }
+          } else if (dir == "desc") {
+            if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+              // 设置调换元素标记，并结束当前循环
+              shouldSwitch = true;
+              break;
+            }
+          }
+        }
+        if (shouldSwitch) {
+          /* 如果元素调换位置设置为 true，则进行对调操作 */
+          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+          switching = true;
+          // 每次对调完成时，将 switchcount 增加 1
+          switchcount ++;
+        } else {
+          /* 如果完成所有元素的排序且 direction 设置为 "asc",这时就将 direction 设置为 "desc" 并再次执行循环 */
+          if (switchcount == 0 && dir == "asc") {
+            dir = "desc";
+            switching = true;
+          }
+        }
+      }
+    }
+    </script>
+<!--頁碼-->
+<script src="../js/jquery-3.6.0.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery-3.6.0.js"><\/script>')</script>
+<script src="../js/Recent_Reg.js"></script>
+<body style="background-color: #f4f8f9;">
+    <header style="background-color: white; width: 100%; height: 70px; position: fixed; top: 0px; z-index: 2;">
+        <div class="container">
+            <div class="row"> 
+              <div class="col">    
+                <a href="../html/index.html"><img style="width:150%;height: auto;" src="../image/logo.png" ></a>
+              </div>
+              <div class="col">                  
+                </div>
+                <div class="col-md-auto">
+                  <a href="../page/guide.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">新手指南</b></a>  
+                </div>
+                <div class="col-md-auto">
+                  <a href="../page/search.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">服務查詢</b></a> 
+                </div>
+                <div class="col-md-auto">
+                  <a href="../page/hoursignin.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">時數認證者</b></a>
+                </div>
+                <div class="col-md-auto">
+                  <a href="../page/serversupplysignin.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">服務提供者</b></a>
+                </div>
+                <div class="col-md-auto">
+                  <a href="../page/volunteerserversignin.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">志工服務者</b></a>
+                </div>
+                <div class="col-md-auto">
+                  <a href="../page/aboutus.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">關於我們</b></a>
+                </div>
+              </div>
+          </div>
+      </header>
+      <div style="padding-top: 15ch;"></div>
+      <div class="container" style="font-size: 3ch;font-family: 'Times New Roman', Times, serif;padding-bottom: 2ch;"><b>近期報名紀錄</b></div>
+      <div class="container"style="background-color: white;height: auto;border-radius:10px;width: auto;">       
+        <table class="table table-hover tablesorter" style="height: 100px;text-align: center;" id="myTable" >
+                    <thead>
+                    <tr>
+                        <th scope="col"  class="align-middle" style="width:17% ;">服務單位</th>
+                        <th scope="col"  class="align-middle" style="width: 14%;">服務類別</th>
+                        <th scope="col"  class="align-middle" style="width: 10%;cursor: pointer;" onclick="sortTable(2)">服務日期 &#8645</th>
+                        <th scope="col"  class="align-middle" style="width: 9%;">服務時間</br>(開始)</th>
+                        <th scope="col"  class="align-middle" style="width: 2%;"></th>
+                        <th scope="col"  class="align-middle" style="width: 9%;">服務時間</br>(結束)</th>
+                        <th scope="col"  class="align-middle" style="width: 11%;cursor: pointer;" onclick="sortTable(6)">報名狀態 &#8645</th>
+                        <th scope="col"  class="align-middle" style="width: 17%;">拒絕原因</th>
+                        <th scope="col"  class="align-middle" style="width: 11%;">服務時數申請</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>新北市新莊區衛生所</td>
+                        <td>醫療衛生/資訊服務/健康與福祉</td>
+                        <td>2022.05.26</td>
+                        <td>14:00</td>
+                        <td>~</td>
+                        <td>17:00</td>
+                        <td>報名成功</td>
+                        <td></td>
+                        <td><a href="../page/time_form.html"><button type="button" class="btn btn-secondary">申請</button></a></td>
+                    </tr>
+                    <tr>
+                        <td>黑潮海洋文教基金會</td>
+                        <td>環境保護/保護及維護海洋資源</td>
+                        <td>2022.04.13</td>
+                        <td>9:00</td>
+                        <td>~</td>
+                        <td>12:00</td>
+                        <td>報名成功</td>
+                        <td></td>
+                        <td><a href="../page/time_form.html"><button type="button" class="btn btn-secondary">申請</button></a></td>
+                    </tr>
+                    <tr>
+                        <td>政慧慈善基金會</td>
+                        <td>為民服務/健康與福祉</td>
+                        <td>2022.05.03</td>
+                        <td>9:00</td>
+                        <td>~</td>
+                        <td>12:00</td>
+                        <td>報名失敗</td>
+                        <td>不符合所招募志工的條件，感謝您的報名。</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>陽光社會福利基金會</td>
+                        <td>社會福利/健康與福祉</td>
+                        <td>2022.04.15</td>
+                        <td>9:00</td>
+                        <td>~</td>
+                        <td>12:00</td>
+                        <td>報名失敗</td>
+                        <td>報名名額已額滿，感謝您的踴躍報名！</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>台灣原光社區關懷協會</td>
+                        <td>原住民服務/健康與福祉</td>
+                        <td>2022.04.15</td>
+                        <td>9:00</td>
+                        <td>~</td>
+                        <td>12:00</td>
+                        <td>報名成功</td>
+                        <td></td>
+                        <td><a href="../page/time_form.html"><button type="button" class="btn btn-secondary">申請</button></a></td>
+                    </tr>
+                    <tr>
+                        <td>社團法人中華長照協會</td>
+                        <td>社會福利/健康與福祉</td>
+                        <td>2022.04.15</td>
+                        <td>8:00</td>
+                        <td>~</td>
+                        <td>11:00</td>
+                        <td>報名失敗</td>
+                        <td>名額已滿，感謝您的報名。</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>財團法人朱銘文教基金會</td>
+                        <td>觀光導覽</td>
+                        <td>2022.04.15</td>
+                        <td>9:00</td>
+                        <td>~</td>
+                        <td>12:00</td>
+                        <td>報名成功</td>
+                        <td></td>
+                        <td><a href="../page/time_form.html"><button type="button" class="btn btn-secondary">申請</button></a></td>
+                    </tr>
+                    <tr>
+                        <td>台灣原光社區關懷協會</td>
+                        <td>原住民服務/健康與福祉</td>
+                        <td>2022.04.15</td>
+                        <td>9:00</td>
+                        <td>~</td>
+                        <td>12:00</td>
+                        <td>報名成功</td>
+                        <td></td>
+                        <td><a href="../page/time_form.html"><button type="button" class="btn btn-secondary">申請</button></a></td>
+                    </tr>
+                    <tr>
+                        <td>台灣原光社區關懷協會</td>
+                        <td>原住民服務/健康與福祉</td>
+                        <td>2022.04.15</td>
+                        <td>9:00</td>
+                        <td>~</td>
+                        <td>12:00</td>
+                        <td>報名成功</td>
+                        <td></td>
+                        <td><a href="../page/time_form.html"><button type="button" class="btn btn-secondary">申請</button></a></td>
+                    </tr>
+                    <tr>
+                        <td>台灣原光社區關懷協會</td>
+                        <td>原住民服務/健康與福祉</td>
+                        <td>2022.04.15</td>
+                        <td>9:00</td>
+                        <td>~</td>
+                        <td>12:00</td>
+                        <td>報名成功</td>
+                        <td></td>
+                        <td><a href="../page/time_form.html"><button type="button" class="btn btn-secondary">申請</button></a></td>
+                    </tr>
+                    <tr>
+                        <td>台灣原光社區關懷協會</td>
+                        <td>原住民服務/健康與福祉</td>
+                        <td>2022.04.15</td>
+                        <td>9:00</td>
+                        <td>~</td>
+                        <td>12:00</td>
+                        <td>報名成功</td>
+                        <td></td>
+                        <td><a href="../page/time_form.html"><button type="button" class="btn btn-secondary">申請</button></a></td>
+                    </tr>
+                    <tr>
+                        <td>台灣原光社區關懷協會</td>
+                        <td>原住民服務/健康與福祉</td>
+                        <td>2022.04.15</td>
+                        <td>9:00</td>
+                        <td>~</td>
+                        <td>12:00</td>
+                        <td>報名成功</td>
+                        <td></td>
+                        <td><a href="../page/time_form.html"><button type="button" class="btn btn-secondary">申請</button></a></td>
+                    </tr>
+                    <tr>
+                        <td>台灣原光社區關懷協會</td>
+                        <td>原住民服務/健康與福祉</td>
+                        <td>2022.04.15</td>
+                        <td>9:00</td>
+                        <td>~</td>
+                        <td>12:00</td>
+                        <td>報名成功</td>
+                        <td></td>
+                        <td><a href="../page/time_form.html"><button type="button" class="btn btn-secondary">申請</button></a></td>
+                    </tr>
+                    <tr>
+                        <td>台灣原光社區關懷協會</td>
+                        <td>原住民服務/健康與福祉</td>
+                        <td>2022.04.15</td>
+                        <td>9:00</td>
+                        <td>~</td>
+                        <td>12:00</td>
+                        <td>報名成功</td>
+                        <td></td>
+                        <td><a href="../page/time_form.html"><button type="button" class="btn btn-secondary">申請</button></a></td>
+                    </tr>
+                    <tr>
+                        <td>台灣原光社區關懷協會</td>
+                        <td>原住民服務/健康與福祉</td>
+                        <td>2022.04.15</td>
+                        <td>9:00</td>
+                        <td>~</td>
+                        <td>12:00</td>
+                        <td>報名成功</td>
+                        <td></td>
+                        <td><a href="../page/time_form.html"><button type="button" class="btn btn-secondary">申請</button></a></td>
+                    </tr>
+                    <tr>
+                        <td>台灣原光社區關懷協會</td>
+                        <td>原住民服務/良好健康與社會福利</td>
+                        <td>2022.04.15</td>
+                        <td>9:00</td>
+                        <td>~</td>
+                        <td>12:00</td>
+                        <td>報名成功</td>
+                        <td></td>
+                        <td><a href="../page/time_form.html"><button type="button" class="btn btn-secondary">申請</button></a></td>
+                    </tr>
+                    </tbody>
+                </table>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-8">
+                    <ul class="pagination" style="margin-left: 55%;align-items: center;" id="pageModule" style="display: flex;align-items: center;justify-content: center;"></ul>
+                    <div id="numberPageModule" style="display: flex;align-items: center;justify-content: center;padding-top: 10px;margin-left: 45%;align-items: center;">
+                        <label for="numberPage">跳至第</label>
+                        <input id="numberPage" type="number" value="1" min="1" max="100">頁
+                    </div>
+                </div>
+                    <div class="col-4" >
+                        <a href="../page/Registration_record.html"><button type="button" class="btn btn-link" style="margin-left: 65%;font-size: large;color: black;">報名總表 &#10148</button></a>
+                    </div>
+            </div>           
+        </div>
+        
+      
+      <!--footer-->
+      <img src="../image/newfooter.png"class="img-fluid" style="margin-bottom: -3%;">
+      <footer style="background-color: #b6c3a7;padding-bottom: 1.5%;">
+        <div class="container">
+          <div class="row">
+            <div class="col-8">
+              <b style="font-size: 2ch;">聯絡資訊</b>
+              <br>
+              E-mail : VTimezone@gmail.com<br>
+              Tel : 0800-000-888<br>
+              Copyright © 2022 CYIM. All Rights Reserved<br>
+              歡迎您來到-志工時區X時間銀行
+            </div>
+            <div class="col-4">
+              <b style="font-size: 2ch;">瀏覽人次:6666人</b>
+            </div>      
+          </div>               
+        </div>     
+      <button type="button" class="btn  btn-floating btn-lg" id="btn-back-to-top"><img style="width: 5ch;" src="../image/up-arrow.png"></button>                               
+      <script src="../js/home.js"></script>                     
+      </footer>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>    
+<script src='//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js'></script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../image/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>
+    <!--頁碼-->
+    <script src="../js/jquery-3.6.0.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-3.6.0.js"><\/script>')</script>
+    <script>       
+      $(function () {
+          /*----產生data-th-----*/
+          let $table = $("#myTable");
+          let $thRows = $table.find("thead th");
+          $thRows.each(function (key, thRow) {
+            $table
+              .find("tbody tr td:nth-child(" + (key + 1) + ")")
+              .attr("data-th", $(thRow).text());
+          });
+          /*-----------*/
+          goPage(1, 10); // 一開始先秀第一頁,以及每一頁最多兩筆資料
+        });
+        
+        
+        function goPage(currentPage, pageSize) {
+          
+            var tr = $("#myTable tbody tr");
+            var num = $("#myTable tbody tr").length; //表格所有行數(所有記錄數)
+            var totalPage = Math.ceil(num / pageSize ); // 表格所有行數/每頁顯示行數 = 總頁數
+          
+            $('#numberPage').attr('max',totalPage); // 寫入跳至第幾頁input
+          
+            $("#numberPage").off('change').on("change",function(){// 跳至第幾頁
+              let numberPage =  $("#numberPage").val();
+              if( numberPage > totalPage ){
+                console.log("頁數超過")
+                return
+            }
+              goPage(numberPage, 10);
+            });
+        
+            var startRow = (currentPage - 1) * pageSize + 1; //開始顯示的行
+            var endRow = currentPage * pageSize; //結束顯示的行
+            endRow = (endRow > num) ? num : endRow; 
+          
+          
+            //遍歷顯示資料實現分頁
+            for (var i = 1; i < (num + 1); i++) {
+                var trRow = tr[i - 1];
+                if (i >= startRow && i <= endRow) {
+                    trRow.style.display = "";
+                } else {
+                    trRow.style.display = "none";
+                }
+            }
+        
+            var tempStr = "";
+            if (currentPage > 1) {
+                tempStr += `<li class="page-item"><a class="page-link" href="javascript:;" onClick="goPage(1,${pageSize})">首頁</a></li>`;
+                tempStr += `<li class="page-item"><a class="page-link" href="javascript:;" onClick="goPage(${currentPage - 1},${pageSize})">&#171</a></li>`;
+              
+            } else {
+                tempStr += `<li class="page-item"><a class="page-link" href="javascript:;" class="disabled">首頁</a></li>`;
+                tempStr += `<li class="page-item"><a class="page-link" href="javascript:;" class="disabled">&#171</a></li>`;
+            }
+              
+                tempStr += `<div><span>第${currentPage}頁</span>/<span>共${totalPage}頁</span></div>`;
+        
+            if (currentPage < totalPage) {
+                tempStr += `<li class="page-item"><a class="page-link" href="javascript:;" onClick="goPage(${currentPage + 1},${pageSize})">&#187</a></li>`;
+                tempStr += `<li class="page-item"><a class="page-link" href="javascript:;" onClick="goPage(${totalPage},${pageSize})">尾頁</a></li>`;
+            } else {
+                tempStr += `<li class="page-item"><a class="page-link" href="javascript:;" class="disabled">&#187</a></li>`;
+                tempStr += `<li class="page-item"><a class="page-link" href="javascript:;" class="disabled">尾頁</a></li>`;
+            }
+        
+            $("#pageModule").html(tempStr);
+          }
+    </script>
+
+    <style>
+      @import url("../css/home.css");
+      /*@import url("../css/pagenumber.css");*/
+    </style>
+    <title>認證通過服務紀錄</title>
+    <style>
+      a:hover {
+        text-decoration:underline;
+        color:black;
+      }
+    </style>
+</head>
+<body style="background-color: #f4f8f9;">
+  <script>$('#sort-table').bootstrapTable();</script>
+    <!--功能列-->
+<header style="background-color: white; width: 100%; height: 70px; position: fixed; top: 0px; z-index: 2;">
+  <div class="container">
+      <div class="row"> 
+        <div class="col">    
+          <a href="../html/index.html"><img style="width:150%;height: auto;" src="../image/logo.png" ></a>
+        </div>
+        <div class="col">    
+         
+          </div>
+          <div class="col-md-auto">
+            <a href="../page/guide.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">新手指南</b></a>  
+          </div>
+          <div class="col-md-auto">
+            <a href="../page/search.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">服務查詢</b></a> 
+          </div>
+          <div class="col-md-auto">
+            <a href="../page/hoursignin.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">時數認證者</b></a>
+          </div>
+          <div class="col-md-auto">
+            <a href="../page/serversupplysignin.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">服務提供者</b></a>
+          </div>
+          <div class="col-md-auto">
+            <a href="../page/volunteerserversignin.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">志工服務者</b></a>
+          </div>
+          <div class="col-md-auto">
+            <a href="../page/aboutus.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">關於我們</b></a>
+          </div>
+        </div>
+    </div>
+    
+</header>
+    </header>
+
+    <!--這裡開始寫-->
+    <script>
+      $(document).on('click', 'th', function() {
+        var table = $(this).parents('table').eq(0);
+        var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()));
+        this.asc = !this.asc;
+        if (!this.asc) {
+          rows = rows.reverse();
+        }
+        table.children('tbody').empty().html(rows);
+      });
+      function comparer(index) {
+        return function(a, b) {
+          var valA = getCellValue(a, index),
+            valB = getCellValue(b, index);
+          return $.isNumeric(valA) && $.isNumeric(valB) ?
+            valA - valB : valA.localeCompare(valB);
+        };
+      }
+      function getCellValue(row, index) {
+        return $(row).children('td').eq(index).text();
+      }
+    </script>
+    <div style="padding-top: 15ch;"></div>
+    <div class="container" style="font-size: 3ch;font-family: 'Times New Roman', Times, serif;padding-bottom: 2ch;"><b>認證通過服務紀錄</b></div>
+    <div class="container"style="background-color: white;height: auto;border-radius:10px;width: auto;">       
+      <table class="table table-hover tablesorter" style="height: 100px;text-align: center;" id="myTable" >
+                  <thead>
+                  <tr>
+                      <th scope="col"  class="align-middle" style="width:17%;">服務單位</th>
+                      <th scope="col"  class="align-middle" style="width: 14%;">服務類別</th>
+                      <th scope="col"  class="align-middle" style="width: 10%;">服務內容</th>
+                      <th scope="col"  class="align-middle" style="width: 10%;">服務日期</th>
+                      <th scope="col"  class="align-middle" style="width: 9%;">服務時數</th>
+                      <th scope="col"  class="align-middle" style="width: 9%;">服務時間</br>(開始)</th>
+                      <th scope="col"  class="align-middle" style="width: 2%;"></th>
+                      <th scope="col"  class="align-middle" style="width: 9%;">服務時間</br>(結束)</th>
+                      <th scope="col"  class="align-middle" style="width: 10%;">認證狀態</th>
+                      <th scope="col"  class="align-middle" style="width: 10%;">證書檢視</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>新北市新莊區衛生所</td>
+                        <td>醫療衛生/資訊服務/健康與福祉</td>
+                        <td>資料鍵入及文書處理</td>
+                        <td>2022.05.26</td>
+                        <td>3</td>
+                        <td>1400</td>
+                        <td>~</td>
+                        <td>1700</td>
+                        <td style="color: #1ead11;">認證成功</td>
+                        <td><a style="color: #454481;"><a href="../image/CERTIFICATE.png" download>下載</a></a></td>
+                    </tr>                  
+                  </tbody>
+              </table>
+      </div>
+      <div class="container">
+          <div class="row">
+              <div class="col-8" style="padding-top: 10px;">
+                  <ul class="pagination" style="margin-left: 55%;align-items: center;" id="pageModule" style="display: flex;align-items: center;justify-content: center;"></ul>
+              </div>
+                  <div class="col-4" >
+                    <div id="numberPageModule" style="display: flex;align-items: center;justify-content: center;padding-top: 10px;margin-left: 45%;align-items: center;">
+                      <label for="numberPage">跳至第</label>
+                      <input id="numberPage" type="number" value="1" min="1" max="100">頁
+                  </div>
+                  </div>
+          </div>           
+      </div>
+
+    <!--寫到這裡-->
+    
+    <img src="../image/newfooter.png" style="position: relative; margin-bottom: 0px; margin-top: 30px; width: 100%;">
+    <footer style="background-color: #b6c3a7; bottom: 0; width: 100%;">
+      <div class="container">
+        <div class="row">
+          <div class="col-8">
+            <b style="font-size: 3ch;">聯絡資訊</b>
+            <br>
+            E-mail : VTimezone@gmail.com<br>
+            Tel : 0800-000-888<br>
+            Copyright © 2022 CYIM. All Rights Reserved<br>
+            歡迎您來到-志工時區X時間銀行
+          </div>
+          <div class="col-4">
+            <b style="font-size: 3ch;">瀏覽人次:6666人</b>
+          </div>      
+        </div>               
+      </div>     
+      <button type="button" class="btn  btn-floating btn-lg" id="btn-back-to-top"><img style="width: 5ch;" src="../image/up-arrow.png"></button>                               
+    <script src="../js/home.js"></script>                     
+    </footer>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<script src='//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js'></script>
+</body>
+</html>

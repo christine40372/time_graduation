@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <meta charset="UTF-8：00-12：00">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../image/favicon.png" type="image/x-icon" />
+    <style>@import url("../css/home.css");</style>
+    <title>服務詳細資訊</title>
+    <style>
+      a:hover {
+        text-decoration:underline;
+        color:black;
+      }
+      
+      /*表格內容*/
+      table{
+   	    border-collapse: separate;
+        border-spacing: 0;
+      	width: 770px; 	
+   	    
+        /*自動斷行*/
+      	word-wrap: break-word;
+      	table-layout: fixed;
+      }
+
+      /*表格框線*/
+      .fancytable{
+        border:1px solid #cccccc; padding:5px;
+         -webkit-border-radius: 5px;
+         -moz-border-radius: 5px;
+         border-radius: 5px;
+       
+      }
+
+       /*表格框線*/
+      .fancytable td{
+        border:1px solid #cccccc; color:#555555;text-align:center;line-height:28px;
+      }
+       
+      /*表格標題背景色*/
+      .headerrow{ 
+        background-color:#E8FFF5;
+      }
+
+      /*表格奇數列背景色*/
+      .datarowodd{
+        background-color:#ffffff;
+      }
+
+      /*表格偶數列背景色*/
+      .dataroweven{
+         background-color:#efefef;
+      }
+
+      .td1{ 
+        background-color:#C4E1FF;
+        border-radius: 45px;
+      }
+  
+      .btn2{
+         float:right;
+      }
+
+    </style>
+
+
+</head>
+
+<body style="background-color: #f4f8f9;">
+
+  <!--需求是否送出
+  <script> 
+    function myFunc() { 
+        var r = confirm("確認是否報名？"); 
+    
+        if (r == true) { 
+          alert("已報名")
+        } 
+        else { 
+          
+        }   
+  
+      } 
+    </script> -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js" integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ" crossorigin="anonymous"></script>
+ 
+  <header style="background-color: white; width: 100%; height: 70px; position: fixed; top: 0px; z-index: 2;">
+    <div class="container">
+        <div class="row"> 
+          <div class="col">    
+            <a href="../html/index.html"><img style="width:150%;height: auto;" src="../image/logo.png" ></a>
+          </div>
+          <div class="col">    
+           
+            </div>
+            <div class="col-md-auto">
+              <a href="../page/guide.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">新手指南</b></a>  
+            </div>
+            <div class="col-md-auto">
+              <a href="../page/search.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">服務查詢</b></a> 
+            </div>
+            <div class="col-md-auto">
+              <a href="../page/hoursignin.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">時數認證者</b></a>
+            </div>
+            <div class="col-md-auto">
+              <a href="../page/serversupplysignin.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">服務提供者</b></a>
+            </div>
+            <div class="col-md-auto">
+              <a href="../page/volunteerserversignin.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">志工服務者</b></a>
+            </div>
+            <div class="col-md-auto">
+              <a href="../page/aboutus.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">關於我們</b></a>
+            </div>
+          </div>
+      </div>
+  </header>
+    
+     <div style="background-color: #f4f8f9;margin-top: 70px;" align="center">
+      <div class="container" style="padding-top: 5ch;text-align: left;font-size: 18px;" >
+        <h4  align="center" valign="center" style="text-decoration: underline;"><b>服務詳細資訊</b></h4>
+        <br>
+          <div class="row" style="padding-left: 35%;">
+            <div class="col-md-auto">
+              <b>服務單位：</b>
+            </div>
+            <div class="col-md-auto">
+              <p>新北市新莊區衛生所</p>
+            </div>
+          </div>
+          <div class="row" style="padding-left: 35%;">
+            <div class="col-md-auto">
+              <b>服務名稱：</b>
+            </div>
+            <div class="col-md-auto">
+              <p>資料及文書處理志工</p>
+            </div>
+          </div>
+          <div class="row" style="padding-left: 35%;">
+            <div class="col-md-auto">
+              <b>服務地點：</b>
+            </div>
+            <div class="col-md-auto">
+              <p>新北市新莊區中華路一段2號</p>
+            </div>
+          </div>
+          <div class="row" style="padding-left: 35%;">
+            <div class="col-md-auto">
+              <b>服務日期與時段：</b>
+            </div>
+            <div class="col-md-auto">
+              <p style="display: inline;">2022-04-06</p>&emsp;<label style="display:inline;">1400-1600</label><br>
+              <p style="display: inline;">2022-04-06</p>&emsp;<label style="display:inline;">1400-1600</label>
+            </div>
+          </div>
+          <div class="row" style="padding-top: 1ch;padding-left: 35%;">
+            <div class="col-md-auto">
+              <b>需求人數：</b>
+            </div>
+            <div class="col-md-auto" >
+              <p>每時段各需10人</p>
+            </div>
+          </div>
+          <div class="row" style="padding-left: 35%;">
+            <div class="col-md-auto">
+              <b>服務內容：</b>
+            </div>
+            <div class="col-md-auto">
+              <p>資料鍵入及文書處理</p>
+            </div>
+          </div>
+          <div class="row" style="padding-left: 35%;">
+            <div class="col-md-auto">
+              <b>報名條件：</b>
+            </div>
+            <div class="col-md-auto">
+              <p>熟悉電腦操作即可</p>
+            </div>
+          </div>
+          <div class="row" style="padding-left: 35%;">
+            <div class="col-md-auto">
+              <b>目前報名人數：</b>
+            </div>
+            <div class="col-md-auto">
+              <p style="display: inline;">2022-04-06</p>&emsp;<label style="display:inline;">1400-1600</label>&emsp;<span>8人</span><br>
+              <p style="display: inline;">2022-04-06</p>&emsp;<label style="display:inline;">1400-1600</label>&emsp;<span>9人</span>
+            </div>
+          </div>
+          <div class="row"  style="padding-left: 45%;padding-top: 5ch;">
+            <view  class="btn2">
+              <a href="../page/s_reg_form.html"><input class="btn btn-success" type="button" value="報名" id="rightButton" ></a>
+              <input class="btn btn-secondary" type="button" value="取消" id="rightButton" onclick="location.href='search.html'">
+              <br>
+             </view> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+     <img style="width:100%; height:auto;padding-top: 3ch;" src="../image/newfooter.png" class="img-fluid" >
+
+     <footer style="background-color: #b6c3a7;">
+      <div class="container">
+        <div class="row">
+          <div class="col-8：00-12：00">
+            <b style="font-size: 3ch;">聯絡資訊</b>
+            <br>
+            E-mail : VTimezone@gmail.com<br>
+            Tel : 0800-000-888<br>
+            Copyright © 2022 CYIM. All Rights Reserved<br>
+            歡迎您來到-志工時區X時間銀行
+          </div>
+          <div class="col-4">
+            <b style="font-size: 3ch;">瀏覽人次:6666人</b>
+          </div>      
+        </div>               
+      </div>     
+      <button type="button" class="btn  btn-floating btn-lg" id="btn-back-to-top"><img style="width: 5ch;" src="../image/up-arrow.png"></button>                               
+    <script src="../js/home.js"></script>                     
+    </footer>
+  
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<script src='//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js'></script>
+</body>
+
+</html>

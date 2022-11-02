@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous"> 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../image/favicon.png" type="image/x-icon" />
+    <style>@import url("../css/home.css");</style>
+    <title>服務需求表單</title>
+    <style>
+      
+    </style>
+</head>
+
+<body style="background-color: #f4f8f9;">
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js" integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ" crossorigin="anonymous"></script>
+
+  <!--功能列-->
+<header style="background-color: white; width: 100%; height: 70px; position: fixed; top: 0px; z-index: 2;">
+  <div class="container">
+      <div class="row"> 
+        <div class="col">    
+          <a href="../html/index.html"><img style="width:150%;height: auto;" src="../image/logo.png" ></a>
+        </div>
+        <div class="col">    
+         
+          </div>
+          <div class="col-md-auto">
+            <a href="../page/guide.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">新手指南</b></a>  
+          </div>
+          <div class="col-md-auto">
+            <a href="../page/search.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">服務查詢</b></a> 
+          </div>
+          <div class="col-md-auto">
+            <a href="../page/hoursignin.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">時數認證者</b></a>
+          </div>
+          <div class="col-md-auto">
+            <a href="../page/serversupplysignin.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">服務提供者</b></a>
+          </div>
+          <div class="col-md-auto">
+            <a href="../page/volunteerserversignin.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">志工服務者</b></a>
+          </div>
+          <div class="col-md-auto">
+            <a href="../page/aboutus.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">關於我們</b></a>
+          </div>
+        </div>
+    </div>
+    
+</header>
+
+    <div style="padding-top: 15ch;"></div>
+    <div class="container" style="padding-bottom: 3%;">
+      <div class="row">
+        <div class="col" style="height: fit-content;" >
+          <div style="font-size: 3ch;font-family: 'Times New Roman', Times, serif;text-align: center;"><b>服務需求表單</b></div>
+          <hr>
+          <form style="font-size: large;margin-top: 3ch;">
+              <div class="form-group row">
+               <label for="Name" class="col-4 col-form-label" style="text-align: center;"> <b>服務單位</b></label>
+                <div class="col-8" style="padding-right: 5ch;">
+                  <input type="text"  class="form-control" id="unit" >
+                </div>
+              </div>
+              <div class="form-group row">
+                  <label for="person-id" class="col-4 col-form-label" style="text-align: center;"><b>服務名稱</b></label>
+                  <div class="col-8" style="padding-right: 5ch;">
+                    <input type="text"  class="form-control" id="servicename" >
+                  </div>
+              </div>
+
+              <div class="form-group row">
+                  <label for="service-name" class="col-4 col-form-label" style="text-align: center;"><b>服務類別</b></label>
+              </div>
+              <div class="form-group row">
+                <div class="col">
+                      <div class="accordion accordion-flush" id="accordionFlushExample" style="margin-left:4ch;margin-right: 4ch;">
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="flush-headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                  SDGs
+                                </button>
+                              </h2>
+                              <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                  <input type="checkbox">終結貧窮
+                                  <input type="checkbox">消除飢餓
+                                  <input type="checkbox">健康福祉
+                                  <input type="checkbox">優質教育
+                                  </br>
+                                  <input type="checkbox">性別平權
+                                  <input type="checkbox">淨水衛生
+                                  <input type="checkbox">可負擔的潔淨能源
+                                  <br>
+                                  <input type="checkbox">合適的工作及經濟成長             
+                                  <input type="checkbox">工業化、創新及基礎建設
+                                  <br>
+                                  <input type="checkbox">減少不平等
+                                  <input type="checkbox">永續城鄉
+                                  <input type="checkbox">責任消費生產
+                                  <input type="checkbox">氣候行動
+                                  <br>
+                                  <input type="checkbox">和平、正義及健全制度
+                                  <input type="checkbox">保育海洋生態
+                                  <br>
+                                  <input type="checkbox">保育陸域生態
+                                  <input type="checkbox">多元夥伴關係
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="flush-headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                  政府單位類別
+                                </button>
+                              </h2>
+                              <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                 <input type="checkbox">社會類
+                                 <input type="checkbox">環境類
+                                 <input type="checkbox">教育類
+                                 <input type="checkbox">文化類
+                                 <input type="checkbox">行政類
+                                 <br>
+                                 <input type="checkbox">交通類
+                                  <input type="checkbox">救護類
+                                  <input type="checkbox">資訊類
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                            <br>
+              </div>
+            </div>
+            </form>
+           
+            <div class="col" style="padding-left: 70%;padding-top: 5ch;">
+                  <a href="../page/serversupplyself.html"><button class="btn btn-warning" type="submit" style="color: white;" >取消</button></a>
+                  <a href="../page/S_Demand2.html"><button class="btn btn-success" type="submit" style="color: white;">下一步</button></a> 
+              </div>
+          </div>
+        <div class="col" style="height: fit-content;">
+          <img src="../image/S_form.png" class="img-fluid rounded" alt="Responsive image">            
+        </div>
+      </div>
+    </div>
+
+     <!--綠色上半部圖片-->
+     <img style="width:100%; height:auto;" src="../image/newfooter.png" class="img-fluid" >
+
+     <footer style="background-color: #b6c3a7;">
+      <div class="container">
+        <div class="row">
+          <div class="col-8">
+            <b style="font-size: 3ch;">聯絡資訊</b>
+            <br>
+            E-mail : VTimezone@gmail.com<br>
+            Tel : 0800-000-888<br>
+            Copyright © 2022 CYIM. All Rights Reserved<br>
+            歡迎您來到-志工時區X時間銀行
+          </div>
+          <div class="col-4">
+            <b style="font-size: 3ch;">瀏覽人次:6666人</b>
+          </div>      
+        </div>               
+      </div>     
+      <button type="button" class="btn  btn-floating btn-lg" id="btn-back-to-top"><img style="width: 5ch;" src="../image/up-arrow.png"></button>                               
+    <script src="../js/home.js"></script>                     
+    </footer>
+  
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<script src='//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js'></script>
+</body>
+
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="shortcut icon" href="../image/favicon.png" type="image/x-icon" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>@import url("../css/home.css");</style>
+    <title>服務報名清單</title>
+    <style>
+        a:hover {
+          text-decoration:underline;
+          color:black;
+        }
+      </style>
+</head>
+<script>
+  function show() {
+   var f = document.forms[0];
+   for (var i=0;i<f.elements.length;i++) {
+    var e = f.elements[i];
+    if (e.type == "checkbox" && e.checked)
+     return true;
+   }
+   alert("服務時段請至少選擇一項！");
+   return false;
+  }
+  </script>
+<body style="background-color: #f4f8f9;">
+    <header style="background-color: white; width: 100%; height: 70px; position: fixed; top: 0px; z-index: 2;">
+        <div class="container">
+            <div class="row"> 
+              <div class="col">    
+                <a href="../html/index.html"><img style="width:150%;height: auto;" src="../image/logo.png" ></a>
+              </div>
+              <div class="col">                  
+                </div>
+                <div class="col-md-auto">
+                  <a href="../page/guide.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">新手指南</b></a>  
+                </div>
+                <div class="col-md-auto">
+                  <a href="../page/search.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">服務查詢</b></a> 
+                </div>
+                <div class="col-md-auto">
+                  <a href="../page/hoursignin.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">時數認證者</b></a>
+                </div>
+                <div class="col-md-auto">
+                  <a href="../page/serversupplysignin.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">服務提供者</b></a>
+                </div>
+                <div class="col-md-auto">
+                  <a href="../page/volunteerserversignin.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">志工服務者</b></a>
+                </div>
+                <div class="col-md-auto">
+                  <a href="../page/aboutus.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">關於我們</b></a>
+                </div>
+              </div>
+          </div>
+      </header>
+      <div style="padding-top: 15ch;"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col" style="height: fit-content;" >
+            <div style="font-size: 3ch;font-family: 'Times New Roman', Times, serif;text-align: center;"><b>服務報名表單</b></div>
+            <hr>
+            <form style="font-size: large;padding-left: 8ch;" name="s_reg_form">
+                <div class="form-group row">
+                 <label for="Name" class="col-5 col-form-label"> <b>姓名</b></label>
+                  <div class="col">
+                    <input type="text" readonly class="form-control-plaintext" id="Name" value="方之涵">
+                  </div>
+                </div>
+                <div class="form-group row">
+                    <label for="person-id" class="col-5 col-form-label"><b>身份證字號</b></label>
+                    <div class="col">
+                      <input type="text" readonly class="form-control-plaintext" id="person-id" value="E223011021">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="service" class="col-5 col-form-label"><b>服務單位</b></label>
+                    <div class="col">
+                      <input type="text" readonly class="form-control-plaintext" id="service" value="新北市新莊區衛生所">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="service-name" class="col-5 col-form-label"><b>服務名稱</b></label>
+                    <div class="col">
+                      <input type="text" readonly class="form-control-plaintext" id="service-name" value="資料文書處理志工">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="service-category" class="col-5 col-form-label"><b>服務類別</b></label>
+                    <div class="col">
+                      <input type="text" readonly class="form-control-plaintext" id="service-category" value="醫療衛生/資訊服務/健康與福祉">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="service-content" class="col-5 col-form-label"><b>服務內容</b></label>
+                    <div class="col">
+                      <input type="text" readonly class="form-control-plaintext" id="service-content" value="資料鍵入及文書處理">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5"><b>服務時間</b></div>
+                    <div class="col">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="date" name="checkbox[]">
+                        <label class="form-check-label" for="date">
+                          2022.05.26
+                        </label>
+                        <label class="form-check-label" id="time1">
+                          14:00
+                        </label>
+                        <label>~</label>
+                        <label class="form-check-label" id="time2">
+                          17:00
+                        </label>
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5"></div>
+                    <div class="col">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="date"  name="checkbox[]">
+                        <label class="form-check-label" for="date">
+                          2022.05.27
+                        </label>
+                        <label class="form-check-label" id="time1">
+                          14:00
+                        </label>
+                        <label>~</label>
+                        <label class="form-check-label" id="time2">
+                          17:00
+                        </label>
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5"></div>
+                    <div class="col">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="date"  name="checkbox[]">
+                        <label class="form-check-label" for="date">
+                          2022.05.28
+                        </label>
+                        <label class="form-check-label" id="time1">
+                          14:00
+                        </label>
+                        <label>~</label>
+                        <label class="form-check-label" id="time2">
+                          17:00
+                        </label>
+                      </div>
+                    </div>
+                </div>
+              </form>
+              <div style="padding-left: 8ch;font-size: large;color: red;">&#10045 報名結果依該服務單位確定後為主</div>
+              <div class="col" style="padding-left: 70%;padding-top: 5ch;">
+                 <!--href尚未填寫-->
+                 <a href="../page/search2.html"><button class="btn btn-warning" type="submit" style="color: white;">取消</button></a>
+                    <a href="../page/Correct_SRF.html"><button class="btn btn-success" id="next" type="submit" style="color: white;" onclick="return show()">下一步</button></a>
+                </div>
+            </div>
+          <div class="col" style="height: fit-content;">
+            <img src="../image/registration-form.png" class="img-fluid rounded" alt="Responsive image">            
+          </div>
+        </div>
+      </div>
+      <!--footer-->
+      <img src="../image/newfooter.png"class="img-fluid">
+      <footer style="background-color: #b6c3a7;padding-bottom: 3ch; box-sizing: border-box; bottom: 0;width: 100%;" >
+        <div class="container">
+          <div class="row">
+            <div class="col-8">
+              <b style="font-size: 2ch;">聯絡資訊</b>
+              <br>
+              E-mail : VTimezone@gmail.com<br>
+              Tel : 0800-000-888<br>
+              Copyright © 2022 CYIM. All Rights Reserved<br>
+              歡迎您來到-志工時區X時間銀行
+            </div>
+            <div class="col-4">
+              <b style="font-size: 2ch;">瀏覽人次:6666人</b>
+            </div>      
+          </div>               
+        </div>     
+      <button type="button" class="btn  btn-floating btn-lg" id="btn-back-to-top"><img style="width: 5ch;" src="../image/up-arrow.png"></button>                               
+      <script src="../js/home.js"></script>                     
+      </footer>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>    
+</body>
+</html>

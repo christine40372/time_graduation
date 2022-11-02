@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="../image/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link type="text/css" href="../css/stampbook.css" rel="stylesheet" media="screen" />		
+    <style>@import url("../css/home.css");</style>
+    <title>SDGs集章冊</title>
+    <style>
+      a{
+  text-decoration: none;
+  }
+    a:hover{
+  text-decoration: underline;
+  color: black;
+}
+  .button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;   
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 9px #999;
+  width: 5cm;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+    </style>
+</head>
+<body>
+ <!--功能列-->
+<header style="background-color: white; width: 100%; height: 70px; position: fixed; top: 0px; z-index: 2;">
+  <div class="container">
+      <div class="row"> 
+        <div class="col">    
+          <a href="../html/index.html"><img style="width:150%;height: auto;" src="../image/logo.png" ></a>
+        </div>
+        <div class="col">    
+         
+          </div>
+          <div class="col-md-auto">
+            <a href="../page/guide.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">新手指南</b></a>  
+          </div>
+          <div class="col-md-auto">
+            <a href="../page/search.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">服務查詢</b></a> 
+          </div>
+          <div class="col-md-auto">
+            <a href="../page/hoursignin.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">時數認證者</b></a>
+          </div>
+          <div class="col-md-auto">
+            <a href="../page/serversupplysignin.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">服務提供者</b></a>
+          </div>
+          <div class="col-md-auto">
+            <a href="../page/volunteerserversignin.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">志工服務者</b></a>
+          </div>
+          <div class="col-md-auto">
+            <a href="../page/aboutus.html"><b style="font-size: 3ch;text-align:center;line-height: 60px;color: black;">關於我們</b></a>
+          </div>
+        </div>
+    </div>
+</header>
+  <div style="background-color: #f4f8f9;margin-top: 70px;">
+      <div class="container">
+          <br>
+        <div class="row"> 
+            <div class="col"></div>
+            <div class="col"><center><a href="../page/sb_gov.html"><button class="button">政府單位類別<br>集章冊</button></a></center></div>
+            <div class="col"><center><a href="../page/sb_sdgs.html" > <button class="button">SDGs<br>集章冊</button></a></center></div>
+            <div class="col"><center><a href="../page/sb_other.html"><button class="button">其他特殊榮譽<br>集章冊</button></a></center></div>
+            <div class="col">    
+        </div>
+        </div>         
+  </div>
+  <div class="container">
+    <div class="row"> 
+      <div class="col">
+  <div id="shineflip">
+	<div id="shineflip-pages">
+		<canvas id="shineflip-canvas"></canvas>
+		<canvas id="shineflip-page-mid-canvas"></canvas>
+		<section class="page">
+			<div><img src="../image/sb_sdgs/0.png" width="475" height="482" /></div>
+			<span style="left:18px;"><img src="../image/sb_sdgs/zh.png" height="482" /></span> 
+		</section>
+		<section class="page" style="background:url(../image/sb_sdgs/back.png)">
+			<div><img src="../image/sb_sdgs/1.png" width="466" height="463" style="float:right;margin-top:9px;" /></div>
+		</section>
+		<section class="page">
+			<div><img src="../image/sb_sdgs/2.png" width="466" height="463" style="float:left;margin-top:9px;" /></div>
+		</section>
+		<section class="page">
+			<div><img src="../image/sb_sdgs/3.png" width="466" height="463" style="float:right;margin-top:9px;" /></div>
+		</section>
+		<section class="page">
+			<div><img src="../image/sb_sdgs/4.png" width="466" height="463" style="float:left;margin-top:9px;" /></div>
+		</section>
+		<section class="page">
+			<div><img src="../image/sb_sdgs/5.png" width="466" height="463" style="float:right;margin-top:9px;" /></div>
+		</section>
+		<section class="page" style="background:url(../image/sb_sdgs/back.png)">
+			<div><img src="../image/sb_sdgs/6.png" width="466" height="463" style="float:left;margin-top:9px;" /></div>
+		</section>
+		<section class="page">
+			<div><img src="../image/sb_sdgs/back.png" width="475" height="482" /></div>
+			<span style="right:18px;"><img src="../image/sb_sdgs/zh.png" height="482" /></span> 
+		</section>
+	</div>
+</div>
+      </div>
+
+<script type="text/javascript" src="../js/shineflip_min.js"></script>
+<script type="text/javascript">
+var shineFlip = new ShineFlip({
+	// autoFitScreen: true,
+	width: 950,
+	height: 482,
+	page_width: 475,
+	page_height: 482
+});
+</script>
+<div class="col">
+  <!--<img src="../image/sb_sdgs/stamp.png" style="width:3.5cm;">-->
+  <!--變換圖檔_開始-->
+<script language="JavaScript"> 
+
+  var slidespeed=1000 
+  var slideimages=new Array("../image/sb_gov/stamp.png","../image/sb_sdgs/stamp.png","../image/sb_other/stamp.png") 
+  var imageholder=new Array() 
+  var ie55=window.createPopup 
+  for (i=0;i<slideimages.length;i++){ 
+  imageholder[i]=new Image() 
+  imageholder[i].src=slideimages[i] 
+  } 
+  function gotoshow(){ 
+  window.location=slidelinks[whichlink] 
+  } 
+  
+  </script> 
+  <img src="001.gif" name="slide" border=0 style="filter:progid:DXImageTransform.Microsoft.Pixelate(MaxSquare=15,Duration=1); width: 3.5cm;" align="middle"> 
+  <script language="JavaScript1.1"> 
+  
+  var whichlink=0 
+  var whichimage=0 
+  var pixeldelay=(ie55)? document.images.slide.filters[0].duration*1000 : 0 
+  function slideit(){ 
+  if (!document.images) return 
+  if (ie55) document.images.slide.filters[0].apply() 
+  document.images.slide.src=imageholder[whichimage].src 
+  if (ie55) document.images.slide.filters[0].play() 
+  whichlink=whichimage 
+  whichimage=(whichimage<slideimages.length-1)? whichimage+1 : 0 
+  setTimeout("slideit()",slidespeed+pixeldelay) 
+  } 
+  slideit() 
+  
+  </script>
+  <!--變換圖檔_結束-->
+  </div>
+  </div>
+    </div>
+
+<br><br><br><br><br><br><br>
+<div style="text-align:center;clear:both;">
+	<script src="/gg_bd_ad_720x90.js" type="text/javascript"></script>
+	<script src="/follow.js" type="text/javascript"></script>
+</div>
+
+
+  
+  <img style="width: 100%;height: auto;" src="../image/newfooter.png" class="img-fluid">
+  <footer style="background-color: #b6c3a7;">
+      <div class="container">
+        <div class="row">
+          <div class="col-8">
+            <b style="font-size: 3ch;">聯絡資訊</b>
+            <br>
+            E-mail : VTimezone@gmail.com<br>
+            Tel : 0800-000-888<br>
+            Copyright © 2022 CYIM. All Rights Reserved<br>
+            歡迎您來到-志工時區X時間銀行
+          </div>
+          <div class="col-4">
+            <b style="font-size: 3ch;">瀏覽人次:6666人</b>
+          </div>      
+        </div>               
+      </div>     
+      <!--回到頂端-->
+      <button type="button" class="btn  btn-floating btn-lg" id="btn-back-to-top"><img style="width: 5ch;" src="../image/up-arrow.png"></button>                               
+    <script src="../js/home.js"></script>                     
+    </footer>
+
+  <script src="../js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
